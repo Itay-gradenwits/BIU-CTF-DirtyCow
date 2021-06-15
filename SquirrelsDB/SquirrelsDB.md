@@ -24,7 +24,7 @@ causing all of the users to be returned.
 So we can simply enter 
 ```123456789 or 1=1``` 
 and that should do the job.
-Let's enter the expression, and viola:
+Let's enter the expression, and voila:
 
 ![Screenshot](3.png) 
 
