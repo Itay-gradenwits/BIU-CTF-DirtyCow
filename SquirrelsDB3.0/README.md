@@ -29,8 +29,8 @@ Because we know that 121212 is not in the databse for sure.
 This is all lovely, however we are not bored. we won't type all the possibilities.
 But what we can do, is use the SQL function ```substr()```.
 
-If we check ```substr(EMAIL, x, 1) = guess``` Then we can find the character at index x of the flag in 256 checks (number of ascii chars).
-So if we assume the flag is about 30 chars long, it will. take us 30x256 = 7680 checks. An improvement, but still too much.
+If we check ```substr(EMAIL, x, 1) = guess``` Then we can find the character at index x of the flag in maximim 256 guesses (number of ascii chars).
+So if we assume the flag is about 30 chars long, it will. take us 30x256 = 7680 checks (worst case). An improvement, but still too much.
 So how can we make the search faster? Well the answer, of course, is *Binary Search*.
 If we do ```substr(EMAIL, x, 1) < guess``` where guess is the middle of the ascii chars which are left, we can find the
 character at index x of the flag in log(256)= 8 checks.
@@ -40,7 +40,7 @@ So using the command
 ```
 121212 or EXISTS(SELECT * FROM users WHERE Id=10210897103 AND substr(EMAIL, x, 1) < guess)
 ```
-160 times (it actually ends up less because most of the characters are letters), we can find the flag which is
+160 times, (it actually ends up less because most of the characters are letters), for each index of the flag, we can find the flag which is
 
 ```
 biuCTF{4r3_y0u_LIKE_bl1nd?!}
