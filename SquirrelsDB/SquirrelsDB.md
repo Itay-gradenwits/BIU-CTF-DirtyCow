@@ -4,11 +4,11 @@ Let's Start. We got a link: http://challenges.ctf.cs.biu.ac.il:7006/
 
 let's press the link and see what we get:
 
-//landing page
+![alt text][1.png]
 
 So we have a search bar. We can input *123456789* and get the user with ID 123456789:
 
- //search 123456789
+![alt text][2.png]
 
 So we can search for users and get information about them. The flag is probably somewhere in the database, but we 
 don't know where. So our only option is to print the whole database.
@@ -26,6 +26,7 @@ So we can simply enter
 and that should do the job.
 Let's enter the expression, and viola:
 
-//found flag
+![alt text][3.png]
+
 
 We found the flag, which is ```biuCTF{sqli_s+4nds_for_sqU1RreLs_Le+h4l_1nFOrm4+1On}```
