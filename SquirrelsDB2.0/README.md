@@ -33,7 +33,12 @@ we get data from the table (but not the flag). So we know the table has 5 column
 are ID and DESCRIPTION (we know that from the *sqlite_master* command).
 
 So we can try ```SELECT ID,DESCRIPTION,null,null,null FROM info```. But we get nothing.
-Let's try ```SELECT null,ID,DESCRIPTION,null,null FROM info```. And voila:
+Let's try ```SELECT null,ID,DESCRIPTION,null,null FROM info```. We'll write into the search bar:
+```
+123456789 UNION SELECT null,ID,DESCRIPTION,null,null FROM info
+```
+
+And voila:
 
 ![Screenshot](4.png) 
 
