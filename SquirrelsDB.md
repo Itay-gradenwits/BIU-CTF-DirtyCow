@@ -1,4 +1,3 @@
-# SquirrelsDB
-## biuCTF2021
+# SquirrelsDB - biuCTF2021
 
 
