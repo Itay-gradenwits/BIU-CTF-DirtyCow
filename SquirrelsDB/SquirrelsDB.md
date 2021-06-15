@@ -4,7 +4,7 @@ Let's Start. We got a link: http://challenges.ctf.cs.biu.ac.il:7006/
 
 let's press the link and see what we get:
 
-![alt text][1.png]
+![Screenshot](1.png) 
 
 So we have a search bar. We can input *123456789* and get the user with ID 123456789:
 
