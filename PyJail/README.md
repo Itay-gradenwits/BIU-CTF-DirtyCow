@@ -1,4 +1,5 @@
 # PyJail - biuCTF 2021
+## WriteUp By DirtyCOW
 
 Let's connect to the server. In first glance, it's seems like a very restricted python shell that doesn't allow us to do almost anything and the only function that works is ```print```. After some experiment in the PyJail we can see that we can also call the ```__dir__``` method, which returns all variables and methods of an object. so lets run:
 ```python
