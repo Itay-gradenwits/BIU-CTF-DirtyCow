@@ -4,7 +4,7 @@ Let's Start. We got a link: http://challenges.ctf.cs.biu.ac.il:7008/
 
 let's press the link ,and we get a page that looks
 similar to the previous challenge. If we input ```123456789```, we can see that we don't get info about the user - 
-we just get an indication if the user is in the databse.
+we just get an indication if the user is in the database
 
 ![Screenshot](1.png) 
 
