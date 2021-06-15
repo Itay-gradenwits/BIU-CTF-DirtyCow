@@ -40,7 +40,7 @@ Let's try ```SELECT null,ID,DESCRIPTION,null,null FROM info```. We'll write into
 
 And voila:
 
-![Screenshot](4.png) 
+![Screenshot](5.png) 
 
 We found the flag, which is ```biuCTF{uN1Te_4g41nSt_THE_SQu1rRELs_un1oN}```
 
