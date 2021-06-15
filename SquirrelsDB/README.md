@@ -1,5 +1,5 @@
 # SquirrelsDB - biuCTF2021
-### By Dirty Cow
+### Writeup By Dirty Cow
 
 Let's Start. We got a link: http://challenges.ctf.cs.biu.ac.il:7006/
 
