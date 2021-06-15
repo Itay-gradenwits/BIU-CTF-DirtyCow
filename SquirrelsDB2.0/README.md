@@ -23,13 +23,18 @@ Let's try to print the table by injecting ```SELECT * FROM info```:
 ![Screenshot](3.png) 
 
 Hmmmm. There is no data. That could be because some of the rows contain NULL in them.
+
 So if we Inject ```SELECT null,null,null,null,null FROM info```:
 
 ![Screenshot](4.png) 
 
-we get data from the table (but not the flag). So we know the table has 5 columns and 2 of them are ID and DESCRIPTION (we know that from the *sqlite_master* command).
-So we can try ```SELECT ID,DESCRIPTION,null,null,null FROM info```. But we get nothing. Let's try ```SELECT null,ID,DESCRIPTION,null,null FROM info``
-And voila:
+
+we get data from the table (but not the flag). So we know the table has 5 columns and 2 of them 
+are ID and DESCRIPTION (we know that from the *sqlite_master* command).
+
+So we can try ```SELECT ID,DESCRIPTION,null,null,null FROM info```. But we get nothing.
+Let's try ```SELECT null,ID,DESCRIPTION,null,null FROM info```. And voila:
+
 ![Screenshot](4.png) 
 
 We found the flag, which is ```biuCTF{uN1Te_4g41nSt_THE_SQu1rRELs_un1oN}```
