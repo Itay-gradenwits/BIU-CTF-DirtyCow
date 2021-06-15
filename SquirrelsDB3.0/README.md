@@ -28,7 +28,8 @@ Because we know that 121212 is not in the databse for sure.
 
 This is all lovely, however we are not bored. we won't type all the possibilities.
 But what we can do, is use the SQL function ```substr()```.
-If check ```substr(EMAIL, x, 1) = guess``` Then we can find the character at index x of the flag in 256 checks (number of ascii chars).
+
+If we check ```substr(EMAIL, x, 1) = guess``` Then we can find the character at index x of the flag in 256 checks (number of ascii chars).
 So if we assume the flag is about 30 chars long, it will. take us 30*256 = 7680* checks. An improvement, but still too much.
 So how can we make the search faster? Well the answer, of course, is *Binary Search*.
 If we do ```substr(EMAIL, x, 1) < guess``` where guess is the middle of the ascii chars which are left, we can find the
