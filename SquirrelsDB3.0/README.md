@@ -24,6 +24,7 @@ and to inject the command, we will type
 ```
 121212 or EXISTS(SELECT * FROM users WHERE Id=10210897103 AND EMAIL=guessed_flag)
 ```
+Because we know that 121212 is not in the databse for sure.
 
 This is all lovely, however we are not bored. we won't type all the possibilities.
 But what we can do, is use the SQL function ```substr()```.
