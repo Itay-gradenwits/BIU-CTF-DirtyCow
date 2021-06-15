@@ -1,6 +1,7 @@
 # SquirrelsDB - biuCTF2021
 
 Let's Start. We got a link: http://challenges.ctf.cs.biu.ac.il:7006/
+
 let's press the link and see what we get:
 
 //landing page
@@ -20,7 +21,9 @@ SELECT * FROM users where ID = {entered_id}
 
 We can exploit the condition. instead of ```where ID = {entered id}``` we want ```where ID = entered_id or 1=1```,
 causing all of the users to be returned. 
-So we can simply enter ```123456789 or 1=1``` and that should do the work.
+So we can simply enter 
+```123456789 or 1=1``` 
+and that should do the work.
 Let's enter the expression, and viola:
 
 //found flag
