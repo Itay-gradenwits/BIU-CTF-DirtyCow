@@ -1,4 +1,5 @@
 # SquirrelsDB 3.0 - biuCTF2021
+## WriteUp By DirtyCOW
 
 Let's Start. We got a link: http://challenges.ctf.cs.biu.ac.il:7008/
 
