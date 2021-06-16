@@ -1,3 +1,6 @@
+# PyJail - biuCTF 2021
+## WriteUp By DirtyCOW
+
 Let's look at the encode method of the message and put it in the function ``` decode_replace() ``` :
 ```python
 def decode_replace(msg):
