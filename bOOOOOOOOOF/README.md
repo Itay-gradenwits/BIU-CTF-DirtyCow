@@ -1,4 +1,6 @@
-# Overview
+# biuCTF2021 - bOOOOOOOOOF
+## WriteUp By DirtyCOW
+### Overview
 First, we look at the code:  
 ```
 #include <stdio.h>
@@ -29,10 +31,10 @@ int main(int argc, char const *argv[])
 We can easily see that our goal is to exploit a simple buffer overflow to change the value of *flag* to not be 0.  
 But we cannot just exploit a buffer overflow here, because we have a **stack canary** here, which is a common technique to prevent buffer overflows. It is actually a special value which is saved on the top of the buffer, and later is checked to see if it has changed because of a buffer overflow. We can see that the canary isn't random or something, but it is a constant value. So if we know the value of the canary, we can simply overflow the buffer and put the original stack canary in its place, so the program will not know that there was a buffer overflow. But how can we know the value of the stack canary?  
 
-# Format string vulnerability
+### Format string vulnerability
 The **printf** function always gets a format strin gin the first parameter, which is a string which contains format parameters (or not), which are of the form %<format_type>. The printf function treats for every format parameter as a real parameter and prints it. So, if we give printf a format string in its first parameter (for example, ```%x``` many times), the printf will think that it has real arguments to print, so it will print the values of the registers and the stack (depending on the architecture, but in any case values from the stack will finally be printed, because the number of the regusters is final), which are considered to be the arguments.
 
-# The exploit
+### The exploit
 Now, we can actually exploit a format string to leak the value of the stack canary. At the time of the call to printf, the stack looks like that:  
 |  value |   size   |
 |--------|----------|
