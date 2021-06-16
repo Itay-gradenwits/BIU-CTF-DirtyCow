@@ -1,4 +1,4 @@
-# biuCTF2021 - bOOOOOOOOOF
+# bOOOOOOOOOF - biuCTF2021
 ## WriteUp By DirtyCOW
 ### Overview
 First, we look at the code:  
