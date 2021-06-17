@@ -27,7 +27,7 @@ sscanf(big_buf,"%16s",buf);
 strcpy(secret, secret_pass);
 printf("You tried to log in with %s\n", buf);
 ```
-The important thing to notice here is that we are limited to input of 16 characters, but the size of the buffer where our input is saved in is 16 charcters. Meaning that if we give input of 16 characters, the null byte will be at ```buf[17]```, which is ```secret[0]``` (```buf``` is located exactly after ```secret```). Since the password is copied to before the user input is copied, if we'll give a 16-char input, like ```AAAAAAAAAAAAAAAA```, the stack will look like this:
+The important thing to notice here is that we are limited to input of 16 characters, but the size of the buffer where our input is saved in is 16 charcters. Meaning that if we give input of 16 characters, the null byte will be at ```buf[17]```, which is ```secret[0]``` (```buf``` is located exactly after ```secret```). Since the user input is copied to ```buf``` before the password is copied to ```secret```, if we'll give a 16-char input, like ```AAAAAAAAAAAAAAAA```, the stack will look like this:
 ```
 +-----+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+--------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+----+
 | buf |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | secret |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |    |
