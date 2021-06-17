@@ -27,7 +27,7 @@ sscanf(big_buf,"%16s",buf);
 strcpy(secret, secret_pass);
 printf("You tried to log in with %s\n", buf);
 ```
-The important thing to notice here is that we are limited to input of 16 characters, but the size of the buffer where our input is saved in is 16 charcters. Meaning that if we give input of 16 characters, the null byte will be at ```buf[17]```, which is ```secret[0]``` (```buf``` is located exactly after ```secret```). Since the user input is copied to ```buf``` before the password is copied to ```secret```, if we'll give a 16-char input, like ```AAAAAAAAAAAAAAAA```, the stack will look like this:
+The important thing to notice here is that we are limited to input of 16 characters, but the size of the buffer where our input is saved in is 16 charcters. Meaning that if we give input of 16 characters, the null byte will be at ```buf[17]```, which is ```secret[0]``` (```buf``` is located exactly after ```secret```). Since the user input is copied to ```buf``` before the password is copied to ```secret```, if we'll give a 16-char input, like ```AAAAAAAAAAAAAAAA```, the stack would look like this:
 ```
 +-----+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+--------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+----+
 | buf |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | secret |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |    |
@@ -56,7 +56,7 @@ if (super_secure_compare(buf, secret,16) == 0) {
     printFlag();
 }
 ```
-Now we write to buf after the password is already there. So if we give ```AAAAAAAAAAAAAAAA``` as an input the stack will look like:
+Now we write to buf after the password is already there. So if we give ```AAAAAAAAAAAAAAAA``` as an input the stack would look like:
 ````
 +-----+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+--------+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+----+
 | buf |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | secret |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |    |
@@ -74,9 +74,10 @@ int super_secure_compare(char* str1, char* str2,int size) {
 	return strcmp(str1, str2) || super_secure_compare(str1 + 1, str2 + 1, size - 1);
 }
 ```
-Because of this, we need to make sure not only ```buf``` and ```secret``` points to the same string, but also ```buf+i``` and ```secret+i``` will points to the same string for every i from 0 to 15.
+Because of this, we need to make sure not only ```buf``` and ```secret``` points to the same string, but also ```buf+i``` and ```secret+i``` points to the same string for every i from 0 to 15.
 Giving ```\0ecreT_p4sssw0rd``` as an input will do the work.
-Here is python script to get the flag:
+
+Here is my python script to get the flag:
 ```python
 from pwn import *
 
